@@ -76,10 +76,18 @@ Namespace OR_Productivity
                 Me.CrystalReportViewer1.ReportSource = document
                 document.SetParameterValue("Date_From", Module1.StaDate)
                 document.SetParameterValue("Date_To", Module1.EndDate)
-            Else
+            ElseIf Module1.pReport = "Daily" Then
                 Module1.strReportName = path & "\Report\Report_OR.rpt"
                 document.Load(Module1.strReportName)
                 document.SetDatabaseLogon("sa", "sa", "svh-sql2", "Productivity")
+                Me.CrystalReportViewer1.ReportSource = document
+                Me.CrystalReportViewer1.ReportSource = document
+                document.SetParameterValue("Date_From", Module1.StaDate)
+                document.SetParameterValue("Date_To", Module1.EndDate)
+            ElseIf Module1.pReport = "Detail" Then
+                Module1.strReportName = path & "\Report\DataDetail.rpt"
+                document.Load(Module1.strReportName)
+                document.SetDatabaseLogon("sa", "sa", "svh-sql2.samitivej.co.th", "Productivity")
                 Me.CrystalReportViewer1.ReportSource = document
                 Me.CrystalReportViewer1.ReportSource = document
                 document.SetParameterValue("Date_From", Module1.StaDate)

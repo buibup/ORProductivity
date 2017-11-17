@@ -18,6 +18,9 @@ Imports System.Windows.Forms
 Imports InterSystems.Data.CacheClient
 Imports System.Data.OleDb
 Imports System.Data.DataSetExtensions
+Imports OR_Productivity.Core
+Imports OR_Productivity.Core.DataAccess
+
 
 
 Namespace OR_Productivity
@@ -316,9 +319,9 @@ Namespace OR_Productivity
 
         <DebuggerStepThrough()> _
         Private Sub InitializeComponent()
-            Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-            Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-            Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+            Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+            Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+            Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
             Me.DGV_OR = New System.Windows.Forms.DataGridView()
             Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
             Me.Column22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -372,7 +375,6 @@ Namespace OR_Productivity
             Me.TB_Actual_RN = New System.Windows.Forms.TextBox()
             Me.Label8 = New System.Windows.Forms.Label()
             Me.Label7 = New System.Windows.Forms.Label()
-            Me.Button1 = New System.Windows.Forms.Button()
             Me.GroupBox3 = New System.Windows.Forms.GroupBox()
             Me.TB_Need_NA = New System.Windows.Forms.TextBox()
             Me.TB_Need_RN = New System.Windows.Forms.TextBox()
@@ -388,6 +390,7 @@ Namespace OR_Productivity
             Me.Label12 = New System.Windows.Forms.Label()
             Me.BT_PrintReport = New System.Windows.Forms.Button()
             Me.Button3 = New System.Windows.Forms.Button()
+            Me.btnPrintDataDetail = New System.Windows.Forms.Button()
             CType(Me.DGV_OR, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.GroupBox1.SuspendLayout()
             Me.GroupBox2.SuspendLayout()
@@ -402,30 +405,30 @@ Namespace OR_Productivity
             Me.DGV_OR.AllowUserToOrderColumns = True
             Me.DGV_OR.AllowUserToResizeColumns = False
             Me.DGV_OR.AllowUserToResizeRows = False
-            DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-            Me.DGV_OR.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+            DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+            Me.DGV_OR.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
             Me.DGV_OR.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                 Or System.Windows.Forms.AnchorStyles.Left) _
                 Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.DGV_OR.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-            DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-            DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-            DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-            DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-            DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-            DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-            DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-            Me.DGV_OR.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+            DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+            DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+            DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+            DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+            DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+            DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+            DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+            Me.DGV_OR.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
             Me.DGV_OR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
             Me.DGV_OR.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column22, Me.Column23, Me.Column2, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column3, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column14, Me.Column16, Me.Column15, Me.Column17, Me.Column13, Me.Column18, Me.Column19, Me.Column20, Me.Column21})
-            DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-            DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-            DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-            DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-            DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-            DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-            DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-            Me.DGV_OR.DefaultCellStyle = DataGridViewCellStyle3
+            DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+            DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+            DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+            DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+            DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+            DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+            DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+            Me.DGV_OR.DefaultCellStyle = DataGridViewCellStyle9
             Me.DGV_OR.GridColor = System.Drawing.SystemColors.ActiveCaptionText
             Me.DGV_OR.Location = New System.Drawing.Point(2, 183)
             Me.DGV_OR.Name = "DGV_OR"
@@ -434,7 +437,7 @@ Namespace OR_Productivity
             Me.DGV_OR.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White
             Me.DGV_OR.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White
             Me.DGV_OR.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-            Me.DGV_OR.Size = New System.Drawing.Size(1295, 438)
+            Me.DGV_OR.Size = New System.Drawing.Size(1295, 505)
             Me.DGV_OR.TabIndex = 0
             '
             'Column1
@@ -603,7 +606,7 @@ Namespace OR_Productivity
             'BT_Export
             '
             Me.BT_Export.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.BT_Export.Location = New System.Drawing.Point(12, 628)
+            Me.BT_Export.Location = New System.Drawing.Point(12, 695)
             Me.BT_Export.Name = "BT_Export"
             Me.BT_Export.Size = New System.Drawing.Size(136, 38)
             Me.BT_Export.TabIndex = 12
@@ -881,16 +884,6 @@ Namespace OR_Productivity
             Me.Label7.TabIndex = 0
             Me.Label7.Text = "RN"
             '
-            'Button1
-            '
-            Me.Button1.Location = New System.Drawing.Point(1013, -1)
-            Me.Button1.Name = "Button1"
-            Me.Button1.Size = New System.Drawing.Size(100, 33)
-            Me.Button1.TabIndex = 19
-            Me.Button1.Text = "Set Staff"
-            Me.Button1.UseVisualStyleBackColor = True
-            Me.Button1.Visible = False
-            '
             'GroupBox3
             '
             Me.GroupBox3.Controls.Add(Me.TB_Need_NA)
@@ -979,7 +972,7 @@ Namespace OR_Productivity
             'DateTimePicker2
             '
             Me.DateTimePicker2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.DateTimePicker2.Location = New System.Drawing.Point(247, 627)
+            Me.DateTimePicker2.Location = New System.Drawing.Point(247, 694)
             Me.DateTimePicker2.Name = "DateTimePicker2"
             Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
             Me.DateTimePicker2.TabIndex = 14
@@ -987,7 +980,7 @@ Namespace OR_Productivity
             'DateTimePicker3
             '
             Me.DateTimePicker3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.DateTimePicker3.Location = New System.Drawing.Point(516, 627)
+            Me.DateTimePicker3.Location = New System.Drawing.Point(516, 694)
             Me.DateTimePicker3.Name = "DateTimePicker3"
             Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
             Me.DateTimePicker3.TabIndex = 15
@@ -996,7 +989,7 @@ Namespace OR_Productivity
             '
             Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Me.Label11.AutoSize = True
-            Me.Label11.Location = New System.Drawing.Point(461, 633)
+            Me.Label11.Location = New System.Drawing.Point(461, 700)
             Me.Label11.Name = "Label11"
             Me.Label11.Size = New System.Drawing.Size(43, 13)
             Me.Label11.TabIndex = 16
@@ -1005,7 +998,7 @@ Namespace OR_Productivity
             'Label12
             '
             Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.Label12.Location = New System.Drawing.Point(191, 633)
+            Me.Label12.Location = New System.Drawing.Point(191, 700)
             Me.Label12.Name = "Label12"
             Me.Label12.Size = New System.Drawing.Size(50, 13)
             Me.Label12.TabIndex = 17
@@ -1014,7 +1007,7 @@ Namespace OR_Productivity
             'BT_PrintReport
             '
             Me.BT_PrintReport.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.BT_PrintReport.Location = New System.Drawing.Point(759, 627)
+            Me.BT_PrintReport.Location = New System.Drawing.Point(759, 694)
             Me.BT_PrintReport.Name = "BT_PrintReport"
             Me.BT_PrintReport.Size = New System.Drawing.Size(136, 38)
             Me.BT_PrintReport.TabIndex = 18
@@ -1024,20 +1017,30 @@ Namespace OR_Productivity
             'Button3
             '
             Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.Button3.Location = New System.Drawing.Point(938, 627)
+            Me.Button3.Location = New System.Drawing.Point(901, 694)
             Me.Button3.Name = "Button3"
             Me.Button3.Size = New System.Drawing.Size(136, 38)
             Me.Button3.TabIndex = 20
             Me.Button3.Text = "Print Report Monthly"
             Me.Button3.UseVisualStyleBackColor = True
             '
+            'btnPrintDataDetail
+            '
+            Me.btnPrintDataDetail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Me.btnPrintDataDetail.Location = New System.Drawing.Point(1043, 694)
+            Me.btnPrintDataDetail.Name = "btnPrintDataDetail"
+            Me.btnPrintDataDetail.Size = New System.Drawing.Size(99, 38)
+            Me.btnPrintDataDetail.TabIndex = 21
+            Me.btnPrintDataDetail.Text = "Data Detail"
+            Me.btnPrintDataDetail.UseVisualStyleBackColor = True
+            '
             'OR_View
             '
             Me.AutoScroll = True
-            Me.ClientSize = New System.Drawing.Size(1301, 674)
+            Me.ClientSize = New System.Drawing.Size(1301, 741)
+            Me.Controls.Add(Me.btnPrintDataDetail)
             Me.Controls.Add(Me.Button3)
             Me.Controls.Add(Me.BT_PrintReport)
-            Me.Controls.Add(Me.Button1)
             Me.Controls.Add(Me.Label12)
             Me.Controls.Add(Me.Label11)
             Me.Controls.Add(Me.DateTimePicker3)
@@ -1370,7 +1373,14 @@ Namespace OR_Productivity
                 'num8 is Productivity(%)
                 num8 = Conversions.ToDouble(((((((num14 + num15) + num16) + num17) + num18 + numClass6W) / Me.hour1) * 100).ToString("N2"))
                 Me.DGV_OR.Item(&H13 + 2, 1).Value = num8
-                Me.DGV_OR.Item(22, 1).Value = (((CDbl(num10) / CDbl((num10 + num9))) * 100) / ((CDbl(num9) / CDbl((num10 + num9))) * 100)).ToString("n2")
+
+                Dim RnPerNa As Double
+                If num9 = 0 Then
+                    RnPerNa = num10
+                Else
+                    RnPerNa = ((CDbl(num10) / CDbl((num10 + num9))) * 100) / ((CDbl(num9) / CDbl((num10 + num9))) * 100)
+                End If
+                Me.DGV_OR.Item(22, 1).Value = RnPerNa.ToString("n2")
                 Me.SCN_SQL3.Close()
                 Me.TB_Class1.Focus()
             Catch exception1 As Exception
@@ -1799,12 +1809,12 @@ Namespace OR_Productivity
         Friend WithEvents Column19 As System.Windows.Forms.DataGridViewTextBoxColumn
         Friend WithEvents Column20 As System.Windows.Forms.DataGridViewTextBoxColumn
         Friend WithEvents Column21 As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents Button1 As System.Windows.Forms.Button
         Friend WithEvents Button2 As System.Windows.Forms.Button
         Friend WithEvents Button3 As System.Windows.Forms.Button
+        Friend WithEvents btnPrintDataDetail As System.Windows.Forms.Button
         Private SCN_SQL3 As SqlConnection
 
-        Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        Private Sub Button1_Click(sender As System.Object, e As System.EventArgs)
             Dim SetStaff As SetActualStaff = New SetActualStaff
             SetStaff.ShowDialog()
         End Sub
@@ -1843,7 +1853,6 @@ Namespace OR_Productivity
             Dim path As String = Directory.GetCurrentDirectory
             path = Replace(path, "bin\Debug", "") & "ExcelReader\bin\Debug\ExcelReader.exe"
             Process.Start(path)
-
         End Sub
 
         Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
@@ -1854,6 +1863,13 @@ Namespace OR_Productivity
             report.ShowDialog()
         End Sub
 
+        Private Sub btnPrintDataDetail_Click(sender As System.Object, e As System.EventArgs) Handles btnPrintDataDetail.Click
+            Dim report As New Report
+            Module1.pReport = "Detail"
+            Module1.StaDate = Me.DateTimePicker2.Value.ToString("yyyy-MM-dd")
+            Module1.EndDate = Me.DateTimePicker3.Value.ToString("yyyy-MM-dd")
+            report.ShowDialog()
+        End Sub
     End Class
 End Namespace
 

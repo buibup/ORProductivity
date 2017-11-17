@@ -55,9 +55,15 @@
   <PropertyGroup>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>Off</OptionExplicit>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <ItemGroup>
     <Compile Include="CacheDb.vb" />
+    <Compile Include="OR_Input.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SetActualStaff.Designer.vb">
       <DependentUpon>SetActualStaff.vb</DependentUpon>
     </Compile>
@@ -82,6 +88,9 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -102,9 +111,6 @@
     </Compile>
     <Compile Include="Constants.vb" />
     <Compile Include="Module1.vb" />
-    <Compile Include="OR_Input.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="OR_View.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -153,5 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.Office.Interop.Excel" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OR_Productivity.Core\OR_Productivity.Core.csproj">
+      <Project>{C8BF5CAA-BBA5-4F3C-9846-2AC0ABDD3755}</Project>
+      <Name>OR_Productivity.Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
